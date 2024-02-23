@@ -1,7 +1,15 @@
 var player;
-// This function initializes or updates the YouTube player with a new video ID
-function loadVideoFromUrl() {
+
+function loadVideoFromUrlHost() {
     var videoUrl = document.getElementById('videoUrlInput').value; // Get video URL from input field
+    if (conn) {
+        conn.send({ type: 'loadVideo', videoUrl: videoUrl });
+    }
+    loadVideoFromUrl(videoUrl);
+}
+
+// This function initializes or updates the YouTube player with a new video ID
+function loadVideoFromUrl(videoUrl) {
     var videoId = extractVideoID(videoUrl); // Extract the video ID from the URL
 
     if (player && videoId) {
