@@ -5,9 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insync</title>
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+
 </head>
 
 <body>
+
+    <button id="btnHost">Host</button>
+    <button id="btnJoin">Join</button>
+
+    <div id="hostSection" style="display:none;">
+        Your Peer ID: <span id="hostId"></span>
+    </div>
+
+    <div id="joinSection" style="display:none;">
+        Enter Host Peer ID: <input type="text" id="peerIdInput">
+        <button id="btnConnect">Connect</button>
+    </div>
+
+
     <label for="videoUrlInput">YouTube Video URL:</label>
     <input type="text" id="videoUrlInput" placeholder="Enter Youtube video URL">
     <button onclick="loadVideoFromUrl()">Load Video</button>
@@ -18,6 +34,8 @@
 
     <script src="script.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script src="peer-connection.js"></script>
 </body>
 
 </html>

@@ -29,7 +29,7 @@ function loadVideoFromUrl() {
 //     player = new YT.Player('youtube-player', {
 //         height: '390',
 //         width: '640',
-//         videoId: 'JGz7Ou0Nwo8',
+//         videoId: '',
 //         events: {
 //             'onReady': onPlayerReady,
 //             'onStateChange': onPlayerStateChange
