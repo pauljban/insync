@@ -1,44 +1,65 @@
-// Event listener for listening whether connection with PeerServer 
-// is establishied.
-// peer.on('open', id => {
-//     console.log(`My peer ID is: ${id}`);
-// });
+// Initialize PeerJS connection
 var peer = new Peer();
+var conn; // Connection object
 
-document.getElementById('btnHost').addEventListener('click', function () {
+// Setup UI event listeners
+function setupUIEventListeners() {
+    document.getElementById('btnHost').addEventListener('click', hostSetup);
+    document.getElementById('btnJoin').addEventListener('click', joinSetup);
+    document.getElementById('btnConnect').addEventListener('click', connectToHost);
+}
 
-    peer.on('open', function (id) {
-        document.getElementById('hostId').textContent = id;
-        document.getElementById('hostSection').style.display = 'block';
-        document.getElementById('joinSection').style.display = 'none';
-    });
+// Host setup
+function hostSetup() {
+    showHostControls();
+    peer.on('open', displayHostId);
+    peer.on('connection', setupConnection);
+}
 
-    // Setup connection handler
-    peer.on('connection', function (conn) {
-        conn.on('data', function (data) {
-            console.log('Received:', data);
-        });
-        conn.on('open', function () {
-            conn.send("Hello from the host!");
-        });
-    });
+// Show host controls and sections
+function showHostControls() {
+    document.querySelector('#hostControls').style.display = 'block';
+    document.getElementById('hostSection').style.display = 'block';
+    document.getElementById('joinSection').style.display = 'none';
+}
 
-});
+// Display host ID
+function displayHostId(id) {
+    document.getElementById('hostId').textContent = id;
+}
 
-document.getElementById('btnJoin').addEventListener('click', function () {
+// Join setup
+function joinSetup() {
     document.getElementById('hostSection').style.display = 'none';
     document.getElementById('joinSection').style.display = 'block';
-});
+}
 
-document.getElementById('btnConnect').addEventListener('click', function () {
+// Establish connection to the host
+function connectToHost() {
     var peerId = document.getElementById('peerIdInput').value;
-    var conn = peer.connect(peerId);
+    conn = peer.connect(peerId);
+    setupConnection(conn);
+}
 
-    conn.on('open', function () {
-        conn.send("Hello from the guest!");
-    });
+// Setup connection handlers
+function setupConnection(connection) {
+    conn = connection;
+    conn.on('open', () => conn.send("Hello!"));
+    conn.on('data', handleDataReceived);
+}
 
-    conn.on('data', function (data) {
-        console.log('Received:', data);
-    });
-});
+// Handle received data
+function handleDataReceived(data) {
+    console.log('Received:', data);
+    if (data.type === 'loadVideo' && data.videoUrl) {
+        loadVideoFromUrl(data.videoUrl);
+    }
+}
+
+// Initial setup
+function init() {
+    setupUIEventListeners();
+}
+
+// Call init to setup everything
+init();
