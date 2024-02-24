@@ -12,7 +12,13 @@ function setupUIEventListeners() {
 // Host setup
 function hostSetup() {
     showHostControls();
-    peer.on('open', displayHostId);
+    if (peer.id) {
+        displayHostId(peer.id);
+    } else {
+        // Only set up the event listener if the peer ID is not yet available.
+        console.log('here');
+        peer.on('open', displayHostId);
+    }
     peer.on('connection', setupConnection);
 }
 
