@@ -59,6 +59,12 @@ function handleDataReceived(data) {
     console.log('Received:', data);
     if (data.type === 'loadVideo' && data.videoUrl) {
         loadVideoFromUrl(data.videoUrl);
+    } else if (data.type === 'controlVideo') {
+        switch (data.action) {
+            case 'pause':
+                player.pauseVideo();
+                break;
+        }
     }
 }
 

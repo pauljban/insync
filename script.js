@@ -59,6 +59,11 @@ function onPlayerStateChange(event) {
         setTimeout(stopVideo, 6000);
         done = true;
     }
+    if (event.data == YT.PlayerState.PAUSED) {
+        if (conn) {
+            conn.send({ type: 'controlVideo', action: 'pause' });
+        }
+    }
 }
 function stopVideo() {
     player.stopVideo();
