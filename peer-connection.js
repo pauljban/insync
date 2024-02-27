@@ -64,6 +64,9 @@ function handleDataReceived(data) {
             case 'pause':
                 player.pauseVideo();
                 break;
+            case 'play':
+                player.playVideo();
+                break;
         }
     }
 }
