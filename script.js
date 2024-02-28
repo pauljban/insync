@@ -54,17 +54,31 @@ function onPlayerReady(event) {
 // The function indicates that when playing a video (state=1),
 // the player should play for six seconds and then stop.
 var done = false;
+var actionInitiatedByUser = true; // Flag to determine the source of the action
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING && !done) {
-        if (conn) {
-            conn.send({ type: 'controlVideo', action: 'play' });
+        console.log(`Playing ${player.getCurrentTime()}`);
+        if (conn && calibrate == false) {
+            conn.send({ type: 'controlVideo', action: 'play', timestamp: player.getCurrentTime() });
+        } else {
+            calibrate = false;
         }
     }
-    if (event.data == YT.PlayerState.PAUSED) {
+    else if (event.data == YT.PlayerState.PAUSED) {
         if (conn) {
-            conn.send({ type: 'controlVideo', action: 'pause' });
+            conn.send({ type: 'controlVideo', action: 'pause', timestamp: player.getCurrentTime() });
         }
     }
+    else if (event.data == YT.PlayerState.BUFFERING) {
+        console.log('I am buffering');
+        if (conn && actionInitiatedByUser) {
+            console.log('buffer handle');
+            conn.send(({ type: 'controlVideo', action: 'buffer' }));
+        }
+        // Reset the flag after sending the message
+        actionInitiatedByUser = true;
+    }
+
 
 }
 function stopVideo() {

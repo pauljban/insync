@@ -54,18 +54,40 @@ function setupConnection(connection) {
     conn.on('data', handleDataReceived);
 }
 
+var calibrate = false;
 // Handle received data
 function handleDataReceived(data) {
     console.log('Received:', data);
+    // Set the flag to false to indicate the action was initiated by a peer message
+    actionInitiatedByUser = false;
+
     if (data.type === 'loadVideo' && data.videoUrl) {
         loadVideoFromUrl(data.videoUrl);
     } else if (data.type === 'controlVideo') {
         switch (data.action) {
             case 'pause':
-                player.pauseVideo();
+                if (player.getPlayerState() != YT.PlayerState.PAUSED) {
+                    player.pauseVideo();
+                    player.seekTo(data.timestamp, true);
+                }
                 break;
             case 'play':
+                //if (player.getPlayerState() != YT.PlayerState.PLAYING) {
                 player.playVideo();
+                if (Math.abs(player.getCurrentTime() - data.timestamp) > 0.02) {
+                    player.seekTo(data.timestamp, true);
+                    calibrate = true;
+                } else {
+                    calibrate = false;
+                }
+
+                //}
+
+                break;
+            case 'buffer':
+                if (player.getPlayerState() != YT.PlayerState.BUFFERING) {
+                    player.pauseVideo();
+                }
                 break;
         }
     }
