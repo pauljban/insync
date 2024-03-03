@@ -1,0 +1,22 @@
+/* Style the button container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.button-container button {
+    font-family: "Roboto", sans-serif;
+    font-size: xx-large;
+    padding: 20px 50px;
+    border: none;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+
+
+
+}

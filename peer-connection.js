@@ -9,8 +9,17 @@ function setupUIEventListeners() {
     document.getElementById('btnConnect').addEventListener('click', connectToHost);
 }
 
+function hideButtonContainer() {
+    const buttonContainer = document.querySelector('.button-container');
+    buttonContainer.style.opacity = 0;
+    setTimeout(() => { buttonContainer.style.display = 'none' }, 500);
+
+
+}
+
 // Host setup
 function hostSetup() {
+    hideButtonContainer();
     showHostControls();
     if (peer.id) {
         displayHostId(peer.id);
@@ -36,6 +45,7 @@ function displayHostId(id) {
 
 // Join setup
 function joinSetup() {
+    hideButtonContainer();
     document.getElementById('hostSection').style.display = 'none';
     document.getElementById('joinSection').style.display = 'block';
 }
