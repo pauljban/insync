@@ -42,7 +42,10 @@ body {
     min-height: 100vh;
     /*Adding min height fixed the weird gradient bending.
     This ensures that the gradient spans the full height of the viewport.*/
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -55,4 +58,14 @@ span {
 span:hover {
     display: inline-block;
     transform: rotate(5deg);
+}
+
+#youtube-player {
+    border: thick solid black;
+    height: 390px;
+    width: 640px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
 }

@@ -17,10 +17,15 @@ function hideButtonContainer() {
 
 }
 
+function showYoutubeContainer() {
+    document.querySelector('#youtube-player').style.display = 'flex';
+}
+
 // Host setup
 function hostSetup() {
     hideButtonContainer();
     showHostControls();
+    showYoutubeContainer();
     if (peer.id) {
         displayHostId(peer.id);
     } else {
