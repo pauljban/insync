@@ -61,11 +61,43 @@ span:hover {
 }
 
 #youtube-player {
-    border: thick solid black;
+    border: 10px solid black;
     height: 390px;
     width: 640px;
     justify-content: center;
     align-items: center;
     display: none;
+    padding: 20px;
+    border-color: rgb(90, 167, 255);
+
+    border-style: inset;
+    box-shadow: inset 1px 4px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.input-box {
+    width: 20rem;
+    height: 3rem;
+    padding: 2px 2px;
+    border: 2px solid #4e9ef4;
+    border-radius: 5%;
+    background-color: #F9F9F9;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+
+}
+
+.copy-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+}
+
+.copy-btn img {
+    width: 30px;
+    height: auto;
 
 }

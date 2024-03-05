@@ -97,3 +97,15 @@ function extractVideoID(url) {
         return null;
     }
 }
+
+document.getElementById('copyButton').addEventListener('click', function () {
+    document.getElementById('copyButton').style.borderColor = 'green';
+    var textToCopy = document.getElementById('hostId').innerText;
+
+    // Using the Clipboard API to copy text
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        console.log('copied');
+    }).catch(err => {
+        console.error('Failed to copy text', err);
+    });
+});
