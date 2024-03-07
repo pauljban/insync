@@ -76,15 +76,21 @@ span:hover {
 }
 
 .input-box {
-    width: 20rem;
-    height: 3rem;
-    padding: 2px 2px;
-    border: 2px solid #4e9ef4;
-    border-radius: 5%;
+    padding: 8px 8px;
+
     background-color: #F9F9F9;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     color: #333;
+    border: none;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.129);
+
+}
+
+
+.input-box:focus {
+    outline: 3px solid #007bff;
+    border-radius: 5%;
 
 }
 
@@ -100,4 +106,15 @@ span:hover {
     width: 30px;
     height: auto;
 
+}
+
+label {
+    font-size: larger;
+    font-family: 'Roboto';
+}
+
+p {
+    display: inline;
+    font-size: larger;
+    font-family: 'Roboto';
 }
