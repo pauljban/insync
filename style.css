@@ -118,3 +118,41 @@ p {
     font-size: larger;
     font-family: 'Roboto';
 }
+
+
+hr {
+    width: 80%;
+    margin: 10px auto;
+    /* Center the hr and add space above and below */
+    border-width: 2px;
+}
+
+#yt-player-container {
+    position: relative;
+    width: 80%;
+    padding-top: 56.25%;
+    /* Aspect Ratio 16:9 */
+
+
+}
+
+#youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+@media (min-width: 1000px) {
+
+    /* Adjusts for screens larger than 1200px wide */
+    #yt-player-container {
+        padding-top: 563px;
+        max-width: 1000px;
+        /* or a suitable maximum height */
+    }
+}

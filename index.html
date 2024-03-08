@@ -20,31 +20,32 @@
         <button id="btnJoin">Join</button>
     </div>
 
-    <div class="control-container">
-        <div id="hostSection" style="display:none;">
-            <p>Your Peer ID: <span id="hostId"></span></p>
-            <button id="copyButton" class="copy-btn" style="display:none;">
-                <!-- Image inside the button, with src as the default PNG -->
-                <img src="assets/copy.png" alt="Copy" id="copyImage" width="50" height="50">
-            </button>
-        </div>
 
-        <div id="joinSection" style="display:none;">
-            Enter Host Peer ID: <input type="text" id="peerIdInput" class="input-box">
-            <button id="btnConnect">Connect</button>
-        </div>
-        <!-- ---------------------------------- -->
-        <div id="hostControls" style="display:none;">
-            <label for="videoUrlInput">YouTube Video URL:</label>
-            <input type="text" id="videoUrlInput" placeholder="Enter Youtube video URL" class="input-box">
-            <button onclick="loadVideoFromUrlHost()">Load Video</button>
-        </div>
-
-
+    <div id="hostSection" style="display:none;">
+        <p>Your Peer ID: <span id="hostId"></span></p>
+        <button id="copyButton" class="copy-btn" style="display:none;">
+            <!-- Image inside the button, with src as the default PNG -->
+            <img src="assets/copy.png" alt="Copy" id="copyImage" width="50" height="50">
+        </button>
     </div>
 
+    <div id="joinSection" style="display:none;">
+        Enter Host Peer ID: <input type="text" id="peerIdInput" class="input-box">
+        <button id="btnConnect">Connect</button>
+    </div>
+    <!-- ---------------------------------- -->
+    <div id="hostControls" style="display:none;">
+        <label for="videoUrlInput">YouTube Video URL:</label>
+        <input type="text" id="videoUrlInput" placeholder="Enter Youtube video URL" class="input-box">
+        <button onclick="loadVideoFromUrlHost()">Load Video</button>
+    </div>
+
+    <hr>
     <!-- This is where the embeded video player will be  -->
-    <div id="youtube-player"></div>
+    <div id="yt-player-container">
+        <div id="youtube-player"></div>
+    </div>
+
 
 
 
