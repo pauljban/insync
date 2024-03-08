@@ -62,12 +62,10 @@ span:hover {
 
 #youtube-player {
     border: 10px solid black;
-    height: 390px;
-    width: 640px;
-    justify-content: center;
-    align-items: center;
+
+
     display: none;
-    padding: 20px;
+
     border-color: rgb(90, 167, 255);
 
     border-style: inset;
@@ -122,7 +120,7 @@ p {
 
 hr {
     width: 80%;
-    margin: 10px auto;
+    margin: 10px;
     /* Center the hr and add space above and below */
     border-width: 2px;
 }
@@ -154,5 +152,6 @@ hr {
         padding-top: 563px;
         max-width: 1000px;
         /* or a suitable maximum height */
+
     }
 }
