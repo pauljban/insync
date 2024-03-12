@@ -61,15 +61,15 @@ span:hover {
 }
 
 #youtube-player {
-    outline: 10px solid black;
+    /* outline: 10px solid black; */
 
 
     display: none;
 
-    outline-color: rgb(90, 167, 255);
+    /* outline-color: rgb(90, 167, 255); */
 
-    outline-style: inset;
-    box-shadow: inset 1px 4px 2px rgba(0, 0, 0, 0.3);
+    /* outline-style: inset; */
+    /* box-shadow: inset 1px 4px 2px rgba(0, 0, 0, 0.3); */
 
 }
 
@@ -82,6 +82,7 @@ span:hover {
     border: none;
     box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.129);
     height: 1em;
+    width: 100%;
 
 }
 
@@ -100,8 +101,8 @@ span:hover {
 }
 
 .copy-btn img {
-    width: 35px;
-    height: 1em;
+    width: 2em;
+        height: auto;
 
 }
 
@@ -122,6 +123,7 @@ hr {
     margin: 10px;
     /* Center the hr and add space above and below */
     border-width: 2px;
+    display: none;
 }
 
 #yt-player-container {
@@ -173,9 +175,22 @@ hr {
     /* This will vertically center align items */
     gap: 5px;
     /* Adjust as needed for spacing */
+    width: 100%;
 
-    padding-left: 5%;
     padding-right: 5%;
+
+
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+
+    padding: 2em;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+
+
 
 
 }

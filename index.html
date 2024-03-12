@@ -20,26 +20,29 @@
         <button id="btnJoin">Join</button>
     </div>
 
+    <section>
+        <div id="hostSection" style="display:none;">
+            <p>Your Peer ID: <span id="hostId"></span></p>
+            <button id="copyButton" class="copy-btn" style="display:none;">
+                <!-- Image inside the button, with src as the default PNG -->
+                <img src="assets/copy.png" alt="Copy" id="copyImage" width="50" height="50">
+            </button>
+        </div>
 
-    <div id="hostSection" style="display:none;">
-        <p>Your Peer ID: <span id="hostId"></span></p>
-        <button id="copyButton" class="copy-btn" style="display:none;">
-            <!-- Image inside the button, with src as the default PNG -->
-            <img src="assets/copy.png" alt="Copy" id="copyImage" width="50" height="50">
-        </button>
-    </div>
+        <div id="joinSection" style="display:none;">
+            Enter Host Peer ID: <input type="text" id="peerIdInput" class="input-box">
+            <button id="btnConnect">Connect</button>
+        </div>
+        <!-- ---------------------------------- -->
+        <div id="hostControls" style="display:none;">
+            <label for="videoUrlInput"></label>
+            <input type="text" id="videoUrlInput" placeholder="Youtube video URL" class="input-box">
+            <button id="arrow-button" onclick="loadVideoFromUrlHost()"><img id="arrow"
+                    src="assets/right-arrow-backup-2-svgrepo-com.svg" alt=""></button>
+        </div>
 
-    <div id="joinSection" style="display:none;">
-        Enter Host Peer ID: <input type="text" id="peerIdInput" class="input-box">
-        <button id="btnConnect">Connect</button>
-    </div>
-    <!-- ---------------------------------- -->
-    <div id="hostControls" style="display:none;">
+    </section>
 
-        <input type="text" id="videoUrlInput" placeholder="Youtube video URL" class="input-box">
-        <button id="arrow-button" onclick="loadVideoFromUrlHost()"><img id="arrow"
-                src="assets/right-arrow-backup-2-svgrepo-com.svg" alt=""></button>
-    </div>
 
     <hr>
     <!-- This is where the embeded video player will be  -->
