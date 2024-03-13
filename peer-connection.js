@@ -18,14 +18,21 @@ function hideButtonContainer() {
 }
 
 function showYoutubeContainer() {
+    document.querySelector('#yt-player-container').style.display = 'block';
     document.querySelector('#youtube-player').style.display = 'flex';
+}
+
+function showSection() {
+    document.querySelector('.section').style.display = 'flex';
 }
 
 // Host setup
 function hostSetup() {
     hideButtonContainer();
+    showSection();
     showHostControls();
     showYoutubeContainer();
+
     if (peer.id) {
         displayHostId(peer.id);
     } else {
@@ -38,19 +45,22 @@ function hostSetup() {
 
 // Show host controls and sections
 function showHostControls() {
-    document.querySelector('#hostControls').style.display = 'block';
-    document.getElementById('hostSection').style.display = 'block';
+    document.querySelector('#hostControls').style.display = 'flex';
+    document.getElementById('hostSection').style.display = 'flex';
     document.getElementById('joinSection').style.display = 'none';
 }
 
 // Display host ID
 function displayHostId(id) {
     document.getElementById('hostId').textContent = id;
+    document.querySelector('#copyButton').style.display = 'inline';
 }
 
 // Join setup
 function joinSetup() {
     hideButtonContainer();
+    showYoutubeContainer();
+    showSection();
     document.getElementById('hostSection').style.display = 'none';
     document.getElementById('joinSection').style.display = 'block';
 }
