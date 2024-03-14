@@ -97,6 +97,8 @@ span:hover {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    height: 2.2em;
+    width: auto;
 
 }
 

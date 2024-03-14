@@ -99,6 +99,7 @@ function extractVideoID(url) {
 }
 
 document.getElementById('copyButton').addEventListener('click', function () {
+    document.getElementById('copyButton').style.borderStyle = 'solid';
     document.getElementById('copyButton').style.borderColor = 'green';
     var textToCopy = document.getElementById('hostId').innerText;
 
