@@ -97,14 +97,16 @@ span:hover {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    height: 2.2em;
-    width: auto;
+
+    padding-top: 1em;
 
 }
 
 .copy-btn img {
     width: 2em;
     height: auto;
+    border: none;
+
 
 }
 
@@ -172,6 +174,9 @@ hr {
 }
 
 #hostControls {
+
+    justify-content: center;
+    align-items: center;
 
     align-items: center;
     /* This will vertically center align items */

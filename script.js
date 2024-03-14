@@ -99,8 +99,10 @@ function extractVideoID(url) {
 }
 
 document.getElementById('copyButton').addEventListener('click', function () {
-    document.getElementById('copyButton').style.borderStyle = 'solid';
-    document.getElementById('copyButton').style.borderColor = 'green';
+    copyButton = document.getElementById('copyImage');
+    copyButton.style.borderColor = 'green';
+    copyButton.style.borderWidth = 'medium';
+    copyButton.style.borderStyle = 'solid';
     var textToCopy = document.getElementById('hostId').innerText;
 
     // Using the Clipboard API to copy text
