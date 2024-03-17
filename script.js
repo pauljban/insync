@@ -102,7 +102,8 @@ document.getElementById('copyButton').addEventListener('click', function () {
     copyButton = document.getElementById('copyImage');
     copyButton.style.borderColor = 'green';
     copyButton.style.borderWidth = 'medium';
-    copyButton.style.borderStyle = 'solid';
+    copyButton.style.borderStyle = 'ridge';
+    copyButton.style.borderRadius = '5px';
     var textToCopy = document.getElementById('hostId').innerText;
 
     // Using the Clipboard API to copy text
