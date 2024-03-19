@@ -62,7 +62,7 @@ function joinSetup() {
     showYoutubeContainer();
     showSection();
     document.getElementById('hostSection').style.display = 'none';
-    document.getElementById('joinSection').style.display = 'block';
+    document.getElementById('joinSection').style.display = 'flex';
 }
 
 // Establish connection to the host
