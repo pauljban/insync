@@ -60,6 +60,10 @@ span:hover {
     transform: rotate(5deg);
 }
 
+#hostId {
+    transform: none;
+}
+
 #youtube-player {
     /* outline: 10px solid black; */
 
