@@ -1,5 +1,17 @@
+
+var stunServer = context.env.STUN_SERVER;
+var turnServer = context.env.TURN_SERVER;
+
 // Initialize PeerJS connection
-var peer = new Peer();
+var peer = new Peer({
+    config: {
+        'iceServers': [
+            stunServer,  // STUN server
+            turnServer  // TURN server
+        ], 'sdpSemantics': 'unified-plan'
+    }
+});
+
 var conn; // Connection object
 
 // Setup UI event listeners
