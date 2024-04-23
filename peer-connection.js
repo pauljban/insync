@@ -2,6 +2,9 @@
 var stunServer = context.env.STUN_SERVER;
 var turnServer = context.env.TURN_SERVER;
 
+var stunServer2 = process.env.STUN_SERVER;
+var turnServer2 = process.env.TURN_SERVER;
+
 // Initialize PeerJS connection
 var peer = new Peer({
     config: {
