@@ -1,16 +1,9 @@
-
-var stunServer = context.env.STUN_SERVER;
-var turnServer = context.env.TURN_SERVER;
-
-var stunServer2 = process.env.STUN_SERVER;
-var turnServer2 = process.env.TURN_SERVER;
-
 // Initialize PeerJS connection
 var peer = new Peer({
     config: {
         'iceServers': [
-            stunServer,  // STUN server
-            turnServer  // TURN server
+            { url: 'stun:stun.l.google.com:19302' },  // STUN server
+            { url: 'turns:freeturn.net:5349', username: 'free', credential: 'free' }  // TURN server
         ], 'sdpSemantics': 'unified-plan'
     }
 });
